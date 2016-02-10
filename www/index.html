@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Model</title>
+		<title>Threejs CAD</title>
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 		<style type="text/css">
@@ -47,11 +47,11 @@
 		<script src="js/dynatree/jquery-ui.custom.min.js" type="text/javascript"></script>
 		<link  href="js/dynatree/skin/ui.dynatree.css" type="text/css" rel="stylesheet">
 		<script src="js/dynatree/jquery.dynatree.min.js" type="text/javascript"></script>
-		<script src="js/Detector.js" type="text/javascript"></script>
-		<script src="js/three.r67.patched.js" type="text/javascript"></script>
-		<script src="js/TrackballControls.js" type="text/javascript"></script>
-		<script src="js/AxisSystem.js" type="text/javascript"></script>
-		<script src="model.json/models.js" type="text/javascript"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/three.r67.patched.js"></script>
+		<script src="js/TrackballControls.js"></script>
+		<script src="js/AxisSystem.js"></script>
+		<script src="airplane.json/models.js"></script>
 	</head>
 	<body>
 		<div id="webglcanvas"></div>
@@ -106,17 +106,17 @@
 
 				geometryArray = new Object();
 				var loader = new THREE.JSONLoader();
-				for(var i = 0; i < jsonFileNames.length; i++){
-					var layerName = jsonFileNames[i].split("/")[1].slice(0, -5);
-					loader.load(layerName, jsonFileNames[i], function(geometry, materials, layerName){
-						mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({vertexColors: THREE.FaceColors, side:THREE.DoubleSide}));
+				for(var jsonFileName in jsonFileNames){
+					var layerName = jsonFileNames[jsonFileName];
+					loader.load(layerName, jsonFileName, function(geometry, materials, layerName){
+						mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({vertexColors: THREE.VertexColors, side:THREE.DoubleSide}));
 						mesh.scale.set(scaleFactor, scaleFactor, scaleFactor);
 						mesh.name = layerName;
 						scene.add(mesh);
 						geometryArray[layerName] = mesh;
 
 						// After the last model has been added to the scene, re-fit it
-						if((scene.children.length - 1) == jsonFileNames.length){
+						if((scene.children.length - 1) == numberOfJSONFiles){
 							fitAll(scene);
 						}
 					}, layerName);
@@ -221,7 +221,6 @@
 										childNode = childNode.getParent();
 										layerName = childNode.data.title + "-" + layerName;
 									}
-									layerName = layerName.replace(/[:;]/g, "-");
 									geometryArray[layerName].visible = select;
 								}
 							});
@@ -231,7 +230,6 @@
 								node = node.getParent();
 								layerName = node.data.title + "-" + layerName;
 							}
-							layerName = layerName.replace(/[:;]/g, "-");
 							geometryArray[layerName].visible = select;
 						}
 					}
