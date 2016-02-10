@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Model</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				overflow: hidden;
+				font-family: Monospace;
+				color: white;
+			}
+			#tree {
+				position: absolute;
+				top:0px;
+			}
+			#webglcanvas {
+				/* The CSS background works only if the renderer is set to 'alpha=true' */
+				background:-moz-linear-gradient(#000000, #ffffff);		/* Firefox 3.6+ */
+				background:-ms-linear-gradient(#000000, #ffffff);		/* Internet Explorer 10 */
+				background:-webkit-linear-gradient(#000000, #ffffff);	/* Safari 5.1+, Chrome 10+ */
+				background:-o-linear-gradient(#000000, #ffffff);		/* For Opera 11.1 to 12.0 */
+				background:linear-gradient(#000000, #ffffff);			/* Standard syntax */
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				z-index: 0;
+			}
+			#objectname {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				color: #fff;
+				text-align: left;
+				background: rgba(0, 0, 0, 0.5);
+				padding: 10px;
+				width: 600px;
+				height: 30px;
+				border: solid 1px black;
+				border-radius: 5px;
+			}
+		</style>
+		<script src="js/dynatree/jquery.min.js" type="text/javascript"></script>
+		<script src="js/dynatree/jquery-ui.custom.min.js" type="text/javascript"></script>
+		<link  href="js/dynatree/skin/ui.dynatree.css" type="text/css" rel="stylesheet">
+		<script src="js/dynatree/jquery.dynatree.min.js" type="text/javascript"></script>
+		<script src="js/Detector.js" type="text/javascript"></script>
+		<script src="js/three.r67.patched.js" type="text/javascript"></script>
+		<script src="js/TrackballControls.js" type="text/javascript"></script>
+		<script src="js/AxisSystem.js" type="text/javascript"></script>
+		<script src="model.json/models.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="webglcanvas"></div>
+		<div id="tree"></div>
+		<div id="objectname"></div>
+		<script>
+			var scene;
+			var camera;
+			var controls;
+			var container;
+			var geometryArray;
+			var objectNameLabel;
+			var directionalLight;
+
+			initializeScene();
+
+			animateScene();
+
+			function initializeScene(){
+				if(!Detector.webgl){
+					Detector.addGetWebGLMessage();
+					return;
+				}
+
+				container = document.getElementById("webglcanvas");
+				containerWidth = container.clientWidth;
+				containerHeight = container.clientHeight;
+
+				renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+				renderer.setSize(containerWidth, containerHeight);
+				container.appendChild(renderer.domElement);
+
+				// Add object picking
+				projector = new THREE.Projector();
+				mouseVector = new THREE.Vector3();
+				window.addEventListener("mousemove", onMouseMove, false);
+				window.addEventListener("resize", onWindowResize, false);
+				objectNameLabel = document.getElementById("objectname");
+
+				scene = new THREE.Scene();
+
+				camera = new THREE.PerspectiveCamera(45, containerWidth / containerHeight, 1, 1000);
+				camera.position.set(0, 0, 6);
+				camera.lookAt(scene.position);
+				scene.add(camera);
+
+				controls = new THREE.TrackballControls(camera, renderer.domElement);
+
+				axisSystem = new AxisSystem(camera, controls);
+
+				var scaleFactor = calculateScaleFactor(boundingBoxMinimum, boundingBoxMaximum);
+
+				geometryArray = new Object();
+				var loader = new THREE.JSONLoader();
+				for(var i = 0; i < jsonFileNames.length; i++){
+					var layerName = jsonFileNames[i].split("/")[1].slice(0, -5);
+					loader.load(layerName, jsonFileNames[i], function(geometry, materials, layerName){
+						mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({vertexColors: THREE.FaceColors, side:THREE.DoubleSide}));
+						mesh.scale.set(scaleFactor, scaleFactor, scaleFactor);
+						mesh.name = layerName;
+						scene.add(mesh);
+						geometryArray[layerName] = mesh;
+
+						// After the last model has been added to the scene, re-fit it
+						if((scene.children.length - 1) == jsonFileNames.length){
+							fitAll(scene);
+						}
+					}, layerName);
+				}
+
+				pointLight = new THREE.PointLight(0xffffff, 1.0);
+				pointLight.position.copy(camera.position);
+				camera.add(pointLight);
+			}
+
+			function onWindowResize(resizeEvent){
+				renderer.setSize(container.clientWidth, container.clientHeight);
+				camera.aspect = container.clientWidth / container.clientHeight;
+				camera.updateProjectionMatrix();
+			}
+
+			function onMouseMove(mouseEvent){
+				mouseVector.x = 2 * (mouseEvent.clientX / container.clientWidth) - 1;
+				mouseVector.y = 1 - 2 * (mouseEvent.clientY / container.clientHeight);
+				var raycaster = projector.pickingRay(mouseVector.clone(), camera);
+				var intersects = raycaster.intersectObjects(scene.children);
+				var visibleObjectFound = 0;
+				if(intersects.length > 0){
+					for(i = 0; i < intersects.length; i++){
+						var object = intersects[i].object;
+						if(object.visible){
+							objectNameLabel.innerHTML = "Tree node: " + object.name;
+							visibleObjectFound = 1;
+							break;
+						}
+					}
+				}
+				if(!visibleObjectFound){
+					objectNameLabel.innerHTML = "";
+				}
+			}
+
+			function calculateScaleFactor(boundingBoxMinimum, boundingBoxMaximum){
+				// Get bounding box size
+				var bBoxSize = [(boundingBoxMaximum[0] - boundingBoxMinimum[0]), (boundingBoxMaximum[1] - boundingBoxMinimum[1]), (boundingBoxMaximum[2] - boundingBoxMinimum[2])];
+
+				// Detect largest dimension
+				var largestSize = bBoxSize[0];
+				if(bBoxSize[1] > largestSize){
+					largestSize = bBoxSize[1];
+				}
+				if(bBoxSize[2] > largestSize){
+					largestSize = bBoxSize[2];
+				}
+
+				// Scale dimension to 100
+				return 100.0 / largestSize;
+			}
+
+			function fitAll(node){
+				// Calculate bounding box of the whole scene
+				var boundingBoxOfNode = new THREE.Box3().setFromObject(node);
+
+				// Refocus camera the center of the given object
+				var centerOfGravity = boundingBoxOfNode.center();
+				var newCameraPosition = new THREE.Vector3();
+				newCameraPosition.subVectors(centerOfGravity, controls.target);
+				camera.position.addVectors(camera.position, newCameraPosition);
+				camera.lookAt(centerOfGravity);
+				controls.target.set(centerOfGravity.x, centerOfGravity.y, centerOfGravity.z);
+
+				// Move camera along z until the object fits into the screen
+				var sphereSize = boundingBoxOfNode.size().length() * 0.5;
+				var distToCenter = sphereSize / Math.sin(Math.PI / 180.0 * camera.fov * 0.5);
+				var target = controls.target;
+				var vec = new THREE.Vector3();
+				vec.subVectors(camera.position, target);
+				vec.setLength(distToCenter);
+				camera.position.addVectors(vec , target);
+			}
+
+			function animateScene(){
+				controls.update();
+				axisSystem.animate();
+				requestAnimationFrame(animateScene);
+				renderScene();
+			}
+
+			function renderScene(){
+				renderer.render(scene, camera);
+				axisSystem.render();
+			}
+
+			$(function(){
+				$("#tree").dynatree({
+					checkbox: true,
+					selectMode: 3,
+					initAjax: {
+						url: productStructureFile
+					},
+					onSelect: function(select, node){
+						if(node.data.isFolder){
+							node.visit(function(childNode){
+								if(!childNode.data.isFolder){
+									layerName = childNode.data.title
+									while(childNode.getLevel() > 2){
+										childNode = childNode.getParent();
+										layerName = childNode.data.title + "-" + layerName;
+									}
+									layerName = layerName.replace(/[:;]/g, "-");
+									geometryArray[layerName].visible = select;
+								}
+							});
+						} else {
+							layerName = node.data.title
+							while(node.getLevel() > 2){
+								node = node.getParent();
+								layerName = node.data.title + "-" + layerName;
+							}
+							layerName = layerName.replace(/[:;]/g, "-");
+							geometryArray[layerName].visible = select;
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

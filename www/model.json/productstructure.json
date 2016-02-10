@@ -1,0 +1,9 @@
+[
+    {"title": "VirtualRootNode", "isFolder": true, "key": "virtualrootnode", "select": true,
+        "children": [
+        {"title": "BODY", "select": true},
+        {"title": "TAIL", "select": true},
+        {"title": "WINGS", "select": true}
+        ]
+        }
+]
