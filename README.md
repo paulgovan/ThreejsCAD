@@ -1,4 +1,4 @@
 # ThreejsCAD
-A Threejs CAD viewer wrapped in a Shiny app
+A simple Shiny web app for the JnetCAD Viewer which can be found at http://www.johannes-raida.de/jnetcad.htm. All credit goes to Johannes Raida, the author of this great application.
 
-Not much to see here, more to follow...
+
