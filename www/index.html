@@ -47,11 +47,11 @@
 		<script src="js/dynatree/jquery-ui.custom.min.js" type="text/javascript"></script>
 		<link  href="js/dynatree/skin/ui.dynatree.css" type="text/css" rel="stylesheet">
 		<script src="js/dynatree/jquery.dynatree.min.js" type="text/javascript"></script>
-		<script src="js/Detector.js" type="text/javascript"></script>
-		<script src="js/three.r67.patched.js" type="text/javascript"></script>
-		<script src="js/TrackballControls.js" type="text/javascript"></script>
-		<script src="js/AxisSystem.js" type="text/javascript"></script>
-		<script src="model.json/models.js" type="text/javascript"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/three.r67.patched.js"></script>
+		<script src="js/TrackballControls.js"></script>
+		<script src="js/AxisSystem.js"></script>
+		<script src="NX_Speedboat.jt.json/models.js"></script>
 	</head>
 	<body>
 		<div id="webglcanvas"></div>
@@ -65,58 +65,74 @@
 			var geometryArray;
 			var objectNameLabel;
 			var directionalLight;
+
 			initializeScene();
+
 			animateScene();
+
 			function initializeScene(){
 				if(!Detector.webgl){
 					Detector.addGetWebGLMessage();
 					return;
 				}
+
 				container = document.getElementById("webglcanvas");
 				containerWidth = container.clientWidth;
 				containerHeight = container.clientHeight;
+
 				renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
 				renderer.setSize(containerWidth, containerHeight);
 				container.appendChild(renderer.domElement);
+
 				// Add object picking
 				projector = new THREE.Projector();
 				mouseVector = new THREE.Vector3();
 				window.addEventListener("mousemove", onMouseMove, false);
 				window.addEventListener("resize", onWindowResize, false);
 				objectNameLabel = document.getElementById("objectname");
+
 				scene = new THREE.Scene();
+
 				camera = new THREE.PerspectiveCamera(45, containerWidth / containerHeight, 1, 1000);
 				camera.position.set(0, 0, 6);
 				camera.lookAt(scene.position);
 				scene.add(camera);
+
 				controls = new THREE.TrackballControls(camera, renderer.domElement);
+
 				axisSystem = new AxisSystem(camera, controls);
+
 				var scaleFactor = calculateScaleFactor(boundingBoxMinimum, boundingBoxMaximum);
+
 				geometryArray = new Object();
 				var loader = new THREE.JSONLoader();
-				for(var i = 0; i < jsonFileNames.length; i++){
-					var layerName = jsonFileNames[i].split("/")[1].slice(0, -5);
-					loader.load(layerName, jsonFileNames[i], function(geometry, materials, layerName){
-						mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({vertexColors: THREE.FaceColors, side:THREE.DoubleSide}));
+				for(var jsonFileName in jsonFileNames){
+					var layerName = jsonFileNames[jsonFileName];
+					loader.load(layerName, jsonFileName, function(geometry, materials, layerName){
+						mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({vertexColors: THREE.VertexColors, side:THREE.DoubleSide}));
 						mesh.scale.set(scaleFactor, scaleFactor, scaleFactor);
 						mesh.name = layerName;
 						scene.add(mesh);
 						geometryArray[layerName] = mesh;
+
 						// After the last model has been added to the scene, re-fit it
-						if((scene.children.length - 1) == jsonFileNames.length){
+						if((scene.children.length - 1) == numberOfJSONFiles){
 							fitAll(scene);
 						}
 					}, layerName);
 				}
+
 				pointLight = new THREE.PointLight(0xffffff, 1.0);
 				pointLight.position.copy(camera.position);
 				camera.add(pointLight);
 			}
+
 			function onWindowResize(resizeEvent){
 				renderer.setSize(container.clientWidth, container.clientHeight);
 				camera.aspect = container.clientWidth / container.clientHeight;
 				camera.updateProjectionMatrix();
 			}
+
 			function onMouseMove(mouseEvent){
 				mouseVector.x = 2 * (mouseEvent.clientX / container.clientWidth) - 1;
 				mouseVector.y = 1 - 2 * (mouseEvent.clientY / container.clientHeight);
@@ -137,9 +153,11 @@
 					objectNameLabel.innerHTML = "";
 				}
 			}
+
 			function calculateScaleFactor(boundingBoxMinimum, boundingBoxMaximum){
 				// Get bounding box size
 				var bBoxSize = [(boundingBoxMaximum[0] - boundingBoxMinimum[0]), (boundingBoxMaximum[1] - boundingBoxMinimum[1]), (boundingBoxMaximum[2] - boundingBoxMinimum[2])];
+
 				// Detect largest dimension
 				var largestSize = bBoxSize[0];
 				if(bBoxSize[1] > largestSize){
@@ -148,12 +166,15 @@
 				if(bBoxSize[2] > largestSize){
 					largestSize = bBoxSize[2];
 				}
+
 				// Scale dimension to 100
 				return 100.0 / largestSize;
 			}
+
 			function fitAll(node){
 				// Calculate bounding box of the whole scene
 				var boundingBoxOfNode = new THREE.Box3().setFromObject(node);
+
 				// Refocus camera the center of the given object
 				var centerOfGravity = boundingBoxOfNode.center();
 				var newCameraPosition = new THREE.Vector3();
@@ -161,6 +182,7 @@
 				camera.position.addVectors(camera.position, newCameraPosition);
 				camera.lookAt(centerOfGravity);
 				controls.target.set(centerOfGravity.x, centerOfGravity.y, centerOfGravity.z);
+
 				// Move camera along z until the object fits into the screen
 				var sphereSize = boundingBoxOfNode.size().length() * 0.5;
 				var distToCenter = sphereSize / Math.sin(Math.PI / 180.0 * camera.fov * 0.5);
@@ -170,16 +192,19 @@
 				vec.setLength(distToCenter);
 				camera.position.addVectors(vec , target);
 			}
+
 			function animateScene(){
 				controls.update();
 				axisSystem.animate();
 				requestAnimationFrame(animateScene);
 				renderScene();
 			}
+
 			function renderScene(){
 				renderer.render(scene, camera);
 				axisSystem.render();
 			}
+
 			$(function(){
 				$("#tree").dynatree({
 					checkbox: true,
@@ -196,7 +221,6 @@
 										childNode = childNode.getParent();
 										layerName = childNode.data.title + "-" + layerName;
 									}
-									layerName = layerName.replace(/[:;]/g, "-");
 									geometryArray[layerName].visible = select;
 								}
 							});
@@ -206,7 +230,6 @@
 								node = node.getParent();
 								layerName = node.data.title + "-" + layerName;
 							}
-							layerName = layerName.replace(/[:;]/g, "-");
 							geometryArray[layerName].visible = select;
 						}
 					}

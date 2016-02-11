@@ -1,0 +1,509 @@
+[
+    {"title": "NX_Speedboat [0]", "isFolder": true, "key": "nx_speedboat[0]", "select": true,
+        "children": [
+        {"title": "assy_deck [12]", "isFolder": true, "key": "assy_deck[12]", "select": true,
+            "children": [
+            {"title": "radio [472] (18)", "select": true},
+            {"title": "radio [472] (8)", "select": true},
+            {"title": "electrical_box_assy [466]", "isFolder": true, "key": "electrical_box_assy[466]", "select": true,
+                "children": [
+                {"title": "electrical_box_1 [482]", "select": true},
+                {"title": "CAP_32 [481]", "select": true}
+                ]
+                },
+            {"title": "radio [472] (17)", "select": true},
+            {"title": "radio [472] (19)", "select": true},
+            {"title": "radio [472] (9)", "select": true},
+            {"title": "radio [472] (50)", "select": true},
+            {"title": "detail_stripe_bottom [468]", "select": true},
+            {"title": "steering_wheel [475]", "select": true},
+            {"title": "detail_stripe_top [467]", "select": true},
+            {"title": "dash_lower_left [476]", "select": true},
+            {"title": "radio [472] (51)", "select": true},
+            {"title": "radio [472] (52)", "select": true},
+            {"title": "radio [472] (40)", "select": true},
+            {"title": "radio [472] (41)", "select": true},
+            {"title": "radio [472]", "select": true},
+            {"title": "radio [472] (30)", "select": true},
+            {"title": "radio [472] (42)", "select": true},
+            {"title": "sport_fin [473]", "select": true},
+            {"title": "radio [472] (31)", "select": true},
+            {"title": "radio [472] (43)", "select": true},
+            {"title": "radio [472] (20)", "select": true},
+            {"title": "radio [472] (32)", "select": true},
+            {"title": "radio [472] (44)", "select": true},
+            {"title": "dash_lower_right [477]", "select": true},
+            {"title": "radio [472] (45)", "select": true},
+            {"title": "radio [472] (21)", "select": true},
+            {"title": "radio [472] (33)", "select": true},
+            {"title": "radio [472] (34)", "select": true},
+            {"title": "radio [472] (46)", "select": true},
+            {"title": "radio [472] (10)", "select": true},
+            {"title": "radio [472] (22)", "select": true},
+            {"title": "back_seat_mount_right [469]", "select": true},
+            {"title": "throttle [474]", "select": true},
+            {"title": "radio [472] (23)", "select": true},
+            {"title": "radio [472] (35)", "select": true},
+            {"title": "radio [472] (2)", "select": true},
+            {"title": "radio [472] (11)", "select": true},
+            {"title": "radio [472] (47)", "select": true},
+            {"title": "throttle [474] (2)", "select": true},
+            {"title": "back_seat_mount_left [470]", "select": true},
+            {"title": "radio [472] (12)", "select": true},
+            {"title": "radio [472] (3)", "select": true},
+            {"title": "radio [472] (24)", "select": true},
+            {"title": "radio [472] (36)", "select": true},
+            {"title": "radio [472] (48)", "select": true},
+            {"title": "radio [472] (4)", "select": true},
+            {"title": "radio [472] (13)", "select": true},
+            {"title": "radio [472] (49)", "select": true},
+            {"title": "radio [472] (25)", "select": true},
+            {"title": "radio [472] (37)", "select": true},
+            {"title": "cabin_door [471]", "select": true},
+            {"title": "radio [472] (5)", "select": true},
+            {"title": "radio [472] (38)", "select": true},
+            {"title": "radio [472] (14)", "select": true},
+            {"title": "radio [472] (26)", "select": true},
+            {"title": "radio [472] (6)", "select": true},
+            {"title": "radio [472] (27)", "select": true},
+            {"title": "radio [472] (39)", "select": true},
+            {"title": "radio [472] (15)", "select": true},
+            {"title": "deck [478]", "select": true},
+            {"title": "radio [472] (29)", "select": true},
+            {"title": "radio [472] (7)", "select": true},
+            {"title": "radio [472] (16)", "select": true},
+            {"title": "radio [472] (28)", "select": true}
+            ]
+            },
+        {"title": "assy_dashboard [8]", "isFolder": true, "key": "assy_dashboard[8]", "select": true,
+            "children": [
+            {"title": "assy_dash_plate_center [83]", "isFolder": true, "key": "assy_dash_plate_center[83]", "select": true,
+                "children": [
+                {"title": "assy_dial_1.75 [173]", "isFolder": true, "key": "assy_dial_1.75[173]", "select": true,
+                    "children": [
+                    {"title": "dial_1.75_inners [204] (4)", "select": true},
+                    {"title": "dial_1.75_inners [204]", "select": true},
+                    {"title": "dial_1.75_inners [204] (2)", "select": true},
+                    {"title": "dial_1.75_inners [204] (3)", "select": true},
+                    {"title": "dial_1.75_ring [202]", "select": true},
+                    {"title": "dial_1.75_glass [203]", "select": true}
+                    ]
+                    },
+                {"title": "assy_dial_3.00 [175]", "isFolder": true, "key": "assy_dial_3.00[175]", "select": true,
+                    "children": [
+                    {"title": "dial_3.00_inners [266] (2)", "select": true},
+                    {"title": "dial_3.00_inners [266]", "select": true},
+                    {"title": "dial_3.00_ring [264]", "select": true},
+                    {"title": "dial_3.00_inners [266] (4)", "select": true},
+                    {"title": "dial_3.00_inners [266] (3)", "select": true},
+                    {"title": "dial_3.00_glass [265]", "select": true}
+                    ]
+                    },
+                {"title": "assy_dial_3.00 [174]", "isFolder": true, "key": "assy_dial_3.00[174]", "select": true,
+                    "children": [
+                    {"title": "dial_3.00_ring [233]", "select": true},
+                    {"title": "dial_3.00_inners [235] (3)", "select": true},
+                    {"title": "dial_3.00_inners [235] (4)", "select": true},
+                    {"title": "dial_3.00_inners [235]", "select": true},
+                    {"title": "dial_3.00_glass [234]", "select": true},
+                    {"title": "dial_3.00_inners [235] (2)", "select": true}
+                    ]
+                    },
+                {"title": "assy_dial_1.75 [176]", "isFolder": true, "key": "assy_dial_1.75[176]", "select": true,
+                    "children": [
+                    {"title": "dial_1.75_ring [269]", "select": true},
+                    {"title": "dial_1.75_inners [271] (4)", "select": true},
+                    {"title": "dial_1.75_inners [271] (3)", "select": true},
+                    {"title": "dial_1.75_inners [271] (2)", "select": true},
+                    {"title": "dial_1.75_inners [271]", "select": true},
+                    {"title": "dial_1.75_glass [270]", "select": true}
+                    ]
+                    },
+                {"title": "dash_plate_center [177]", "isFolder": true, "key": "dash_plate_center[177]", "select": true,
+                    "children": [
+                    {"title": "box_par [273]", "select": true}
+                    ]
+                    },
+                {"title": "assy_dial_1.25 [172]", "isFolder": true, "key": "assy_dial_1.25[172]", "select": true,
+                    "children": [
+                    {"title": "dial_1.25_inners [199] (3)", "select": true},
+                    {"title": "dial_1.25_glass [198]", "select": true},
+                    {"title": "dial_1.25_inners [199]", "select": true},
+                    {"title": "dial_1.25_ring [197]", "select": true},
+                    {"title": "dial_1.25_inners [199] (2)", "select": true},
+                    {"title": "dial_1.25_inners [199] (4)", "select": true}
+                    ]
+                    },
+                {"title": "assy_dial_1.25 [171]", "isFolder": true, "key": "assy_dial_1.25[171]", "select": true,
+                    "children": [
+                    {"title": "dial_1.25_glass [193]", "select": true},
+                    {"title": "dial_1.25_inners [194]", "select": true},
+                    {"title": "dial_1.25_ring [192]", "select": true},
+                    {"title": "dial_1.25_inners [194] (2)", "select": true},
+                    {"title": "dial_1.25_inners [194] (4)", "select": true},
+                    {"title": "dial_1.25_inners [194] (3)", "select": true}
+                    ]
+                    },
+                {"title": "nut_lock_key [169]", "select": true},
+                {"title": "start_key_component [170]", "select": true}
+                ]
+                },
+            {"title": "assy_dash_plate_left [84]", "isFolder": true, "key": "assy_dash_plate_left[84]", "select": true,
+                "children": [
+                {"title": "assy_dial_2.00 [278]", "isFolder": true, "key": "assy_dial_2.00[278]", "select": true,
+                    "children": [
+                    {"title": "dial_2.00_ring [283]", "select": true},
+                    {"title": "dial_2.00_inners [285]", "select": true},
+                    {"title": "dial_2.00_inners [285] (2)", "select": true},
+                    {"title": "dial_2.00_inners [285] (4)", "select": true},
+                    {"title": "dial_2.00_inners [285] (3)", "select": true},
+                    {"title": "dial_2.00_glass [284]", "select": true}
+                    ]
+                    },
+                {"title": "assy_dial_1.25 [279]", "isFolder": true, "key": "assy_dial_1.25[279]", "select": true,
+                    "children": [
+                    {"title": "dial_1.25_inners [290] (3)", "select": true},
+                    {"title": "dial_1.25_inners [290] (2)", "select": true},
+                    {"title": "dial_1.25_inners [290] (4)", "select": true},
+                    {"title": "dial_1.25_inners [290]", "select": true},
+                    {"title": "dial_1.25_ring [288]", "select": true},
+                    {"title": "dial_1.25_glass [289]", "select": true}
+                    ]
+                    },
+                {"title": "dash_plate_left [280]", "select": true}
+                ]
+                },
+            {"title": "assy_dash_plate_right [82]", "isFolder": true, "key": "assy_dash_plate_right[82]", "select": true,
+                "children": [
+                {"title": "assy_dial_2.00 [100]", "isFolder": true, "key": "assy_dial_2.00[100]", "select": true,
+                    "children": [
+                    {"title": "dial_2.00_inners [107] (2)", "select": true},
+                    {"title": "dial_2.00_ring [105]", "select": true},
+                    {"title": "dial_2.00_glass [106]", "select": true},
+                    {"title": "dial_2.00_inners [107]", "select": true},
+                    {"title": "dial_2.00_inners [107] (3)", "select": true},
+                    {"title": "dial_2.00_inners [107] (4)", "select": true}
+                    ]
+                    },
+                {"title": "assy_dial_1.25 [101]", "isFolder": true, "key": "assy_dial_1.25[101]", "select": true,
+                    "children": [
+                    {"title": "dial_1.25_glass [137]", "select": true},
+                    {"title": "dial_1.25_inners [138] (4)", "select": true},
+                    {"title": "dial_1.25_ring [136]", "select": true},
+                    {"title": "dial_1.25_inners [138] (2)", "select": true},
+                    {"title": "dial_1.25_inners [138] (3)", "select": true},
+                    {"title": "dial_1.25_inners [138]", "select": true}
+                    ]
+                    },
+                {"title": "dash_plate_right [102]", "select": true}
+                ]
+                },
+            {"title": "screw_.25 [80] (2)", "select": true},
+            {"title": "dash_upper_right [85]", "select": true},
+            {"title": "screw_.25 [79]", "select": true},
+            {"title": "screw_.25 [79] (2)", "select": true},
+            {"title": "screw_.25 [78]", "select": true},
+            {"title": "screw_.25 [78] (2)", "select": true},
+            {"title": "screw_.25 [81]", "select": true},
+            {"title": "screw_.25 [80]", "select": true},
+            {"title": "screw_.25 [81] (2)", "select": true}
+            ]
+            },
+        {"title": "assy_hull [13]", "isFolder": true, "key": "assy_hull[13]", "select": true,
+            "children": [
+            {"title": "assy_cabinet [605]", "isFolder": true, "key": "assy_cabinet[605]", "select": true,
+                "children": [
+                {"title": "bolt_.75 [794]", "select": true},
+                {"title": "assy_lower_cabinet_door [792]", "isFolder": true, "key": "assy_lower_cabinet_door[792]", "select": true,
+                    "children": [
+                    {"title": "sink_cabinet_door_trim1 [890]", "select": true},
+                    {"title": "sink_cabinet_door_trim4 [887]", "select": true},
+                    {"title": "sink_cabinet_door_trim3 [888]", "select": true},
+                    {"title": "sink_cabinet_door_trim2 [889]", "select": true},
+                    {"title": "sink_cabinet_door_plate1 [891]", "select": true}
+                    ]
+                    },
+                {"title": "assy_lower_cabinet [793]", "isFolder": true, "key": "assy_lower_cabinet[793]", "select": true,
+                    "children": [
+                    {"title": "sink_cabinet_plate3 [915]", "select": true},
+                    {"title": "sink_cabinet_plate2 [916]", "select": true},
+                    {"title": "sink_cabinet_plate4 [914]", "select": true},
+                    {"title": "sink_cabinet_plate1 [917]", "select": true},
+                    {"title": "sink_cabinet_plate5 [913]", "select": true},
+                    {"title": "sink_counter_top [912]", "select": true}
+                    ]
+                    },
+                {"title": "assy_holding_tank [791]", "isFolder": true, "key": "assy_holding_tank[791]", "select": true,
+                    "children": [
+                    {"title": "holding_tank_drain [877]", "select": true},
+                    {"title": "holding_tank [878]", "select": true}
+                    ]
+                    },
+                {"title": "bolt_.75 [795]", "select": true},
+                {"title": "assy_faucet [787]", "isFolder": true, "key": "assy_faucet[787]", "select": true,
+                    "children": [
+                    {"title": "faucet_base [802]", "select": true},
+                    {"title": "faucet_handle_right [800]", "select": true},
+                    {"title": "faucet_spout [797]", "select": true},
+                    {"title": "faucet_handle_left [801]", "select": true},
+                    {"title": "faucet_pipe_right [798]", "select": true},
+                    {"title": "faucet_pipe_left [799]", "select": true}
+                    ]
+                    },
+                {"title": "water_heater [796]", "select": true},
+                {"title": "assy_upper_cabinet_door [788]", "isFolder": true, "key": "assy_upper_cabinet_door[788]", "select": true,
+                    "children": [
+                    {"title": "sink_top_door_trim1 [830]", "select": true},
+                    {"title": "sink_top_door_trim4 [827]", "select": true},
+                    {"title": "sink_top_door_trim3 [828]", "select": true},
+                    {"title": "sink_top_door_trim2 [829]", "select": true},
+                    {"title": "sink_top_door_plate5 [831]", "select": true}
+                    ]
+                    },
+                {"title": "assy_sink [790]", "isFolder": true, "key": "assy_sink[790]", "select": true,
+                    "children": [
+                    {"title": "sink [868]", "select": true},
+                    {"title": "sink_drain [867]", "select": true}
+                    ]
+                    },
+                {"title": "assy_upper_cabinet [789]", "isFolder": true, "key": "assy_upper_cabinet[789]", "select": true,
+                    "children": [
+                    {"title": "sink_top_cabinet_plate1 [854]", "select": true},
+                    {"title": "sink_top_cabinet_plate2 [853]", "select": true},
+                    {"title": "sink_top_cabinet_plate3 [852]", "select": true}
+                    ]
+                    },
+                {"title": "water_heater [796] (2)", "select": true},
+                {"title": "water_heater [796] (3)", "select": true}
+                ]
+                },
+            {"title": "assy_side_logo [606]", "isFolder": true, "key": "assy_side_logo[606]", "select": true,
+                "children": [
+                {"title": "hull_stripe [963]", "select": true},
+                {"title": "logo_wave [964]", "select": true}
+                ]
+                },
+            {"title": "tube_heater_faucet [604]", "select": true},
+            {"title": "assy_ceiling_tile [599]", "isFolder": true, "key": "assy_ceiling_tile[599]", "select": true,
+                "children": [
+                {"title": "ceiling_tile [641]", "isFolder": true, "key": "ceiling_tile[641]", "select": true,
+                    "children": [
+                    {"title": "HEAD_VENT [655]", "select": true},
+                    {"title": "HEAD_LIGHTS_ASSY [656]", "select": true}
+                    ]
+                    },
+                {"title": "ceiling_light_one [639]", "select": true},
+                {"title": "ceiling_skylight_trim [640]", "select": true},
+                {"title": "ceiling_light_two [638]", "select": true}
+                ]
+                },
+            {"title": "assy_bench_bed [600]", "isFolder": true, "key": "assy_bench_bed[600]", "select": true,
+                "children": [
+                {"title": "bench_bed_plate4 [674]", "select": true},
+                {"title": "bench_bed_plate3 [675]", "select": true},
+                {"title": "bench_bed_mat_right [667]", "select": true},
+                {"title": "bench_bed_plate2 [676]", "select": true},
+                {"title": "bench_bed_plate6 [672]", "select": true},
+                {"title": "bench_bed_plate5 [673]", "select": true},
+                {"title": "bench_bed_plate7 [671]", "select": true},
+                {"title": "bench_bed_plate8 [670]", "select": true},
+                {"title": "bench_bed_plate1 [677]", "select": true},
+                {"title": "bench_bed_mat_center [669]", "select": true},
+                {"title": "bench_bed_mat_left [668]", "select": true}
+                ]
+                },
+            {"title": "gas_pump [620]", "select": true},
+            {"title": "floor_shipside [612]", "select": true},
+            {"title": "chair_base_mount_right [621]", "select": true},
+            {"title": "fuel_tank_stand_mount [614]", "select": true},
+            {"title": "assy_spar_stringer [613]", "isFolder": true, "key": "assy_spar_stringer[613]", "select": true,
+                "children": [
+                {"title": "spar_1_right [1018]", "select": true},
+                {"title": "spar_4_middle [1010]", "select": true},
+                {"title": "stringer_1 [998]", "select": true},
+                {"title": "stringer_2 [997]", "select": true},
+                {"title": "spar_5_middle [1007]", "select": true},
+                {"title": "spar_4_left [1009]", "select": true},
+                {"title": "spar_3_left [1012]", "select": true},
+                {"title": "spar_3_right [1013]", "select": true},
+                {"title": "spar_7_left [1000]", "select": true},
+                {"title": "spar_7_right [1002]", "select": true},
+                {"title": "spar_5_left [1006]", "select": true},
+                {"title": "spar_1_left [1017]", "select": true},
+                {"title": "spar_5_right [1008]", "select": true},
+                {"title": "stringer_1_middle [996]", "select": true},
+                {"title": "spar_6_middle [1004]", "select": true},
+                {"title": "spar_6_left [1003]", "select": true},
+                {"title": "spar_8_middle [999]", "select": true},
+                {"title": "spar_2_left [1014]", "select": true},
+                {"title": "spar_6_right [1005]", "select": true},
+                {"title": "spar_2_right [1016]", "select": true},
+                {"title": "spar_7_middle [1001]", "select": true},
+                {"title": "spar_4_right [1011]", "select": true},
+                {"title": "spar_2_middle [1015]", "select": true},
+                {"title": "stringer_2_middle [995]", "select": true}
+                ]
+                },
+            {"title": "engine_mount_left [602]", "select": true},
+            {"title": "toilet [597]", "select": true},
+            {"title": "assy_head [603]", "isFolder": true, "key": "assy_head[603]", "select": true,
+                "children": [
+                {"title": "head_plate1 [737]", "isFolder": true, "key": "head_plate1[737]", "select": true,
+                    "children": [
+                    {"title": "HEAD_INDICATOR_PANEL_ASSY [767]", "select": true},
+                    {"title": "LIGHT_SWITCH [768]", "select": true},
+                    {"title": "HEAD_SWITCH [769]", "select": true}
+                    ]
+                    },
+                {"title": "head_plate2 [736]", "select": true},
+                {"title": "head_door_plate2 [732]", "select": true},
+                {"title": "head_plate3 [735]", "select": true},
+                {"title": "head_plate4 [734]", "select": true},
+                {"title": "head_door_plate1 [733]", "select": true},
+                {"title": "head_door_plate4 [730]", "select": true},
+                {"title": "head_door_plate3 [731]", "select": true}
+                ]
+                },
+            {"title": "bolt_.75 [618]", "select": true},
+            {"title": "assy_fuel_tank [616]", "isFolder": true, "key": "assy_fuel_tank[616]", "select": true,
+                "children": [
+                {"title": "fuel_tank [1124]", "select": true},
+                {"title": "fuel_tank_cap [1123]", "select": true}
+                ]
+                },
+            {"title": "bolt_.75 [619]", "select": true},
+            {"title": "assy_water_tank [617]", "isFolder": true, "key": "assy_water_tank[617]", "select": true,
+                "children": [
+                {"title": "water_tank [1134]", "select": true},
+                {"title": "water_tank_cap [1133]", "select": true}
+                ]
+                },
+            {"title": "assy_table [598]", "isFolder": true, "key": "assy_table[598]", "select": true,
+                "children": [
+                {"title": "table [628]", "select": true},
+                {"title": "table_stand [629]", "select": true}
+                ]
+                },
+            {"title": "water_tank_stand_mount [615]", "select": true},
+            {"title": "chair_base_mount_left [607]", "select": true},
+            {"title": "floor_cabin [610]", "select": true},
+            {"title": "toilet [597] (2)", "select": true},
+            {"title": "engine_mount_right [601]", "select": true},
+            {"title": "toilet [597] (3)", "select": true},
+            {"title": "hull [608]", "select": true},
+            {"title": "floor_service_door [609]", "select": true},
+            {"title": "floor_vertical_divider [611]", "select": true}
+            ]
+            },
+        {"title": "assy_windows [11]", "isFolder": true, "key": "assy_windows[11]", "select": true,
+            "children": [
+            {"title": "assy_window_right_rear [411]", "isFolder": true, "key": "assy_window_right_rear[411]", "select": true,
+                "children": [
+                {"title": "window_right_rear_glass [416]", "select": true},
+                {"title": "window_right_rear_rim [417]", "select": true}
+                ]
+                },
+            {"title": "assy_window_door [415]", "isFolder": true, "key": "assy_window_door[415]", "select": true,
+                "children": [
+                {"title": "window_door_glass [456]", "select": true},
+                {"title": "window_door_rim [457]", "select": true}
+                ]
+                },
+            {"title": "assy_window_left_rear [413]", "isFolder": true, "key": "assy_window_left_rear[413]", "select": true,
+                "children": [
+                {"title": "window_left_rear_rim [437]", "select": true},
+                {"title": "window_left_rear_glass [436]", "select": true}
+                ]
+                },
+            {"title": "assy_window_left_front [414]", "isFolder": true, "key": "assy_window_left_front[414]", "select": true,
+                "children": [
+                {"title": "window_left_front_rim [447]", "select": true},
+                {"title": "window_left_front_glass [446]", "select": true}
+                ]
+                },
+            {"title": "assy_window_right_front [412]", "isFolder": true, "key": "assy_window_right_front[412]", "select": true,
+                "children": [
+                {"title": "window_right_front_glass [426]", "select": true},
+                {"title": "window_right_front_rim [427]", "select": true}
+                ]
+                }
+            ]
+            },
+        {"title": "assy_seat [10]", "isFolder": true, "key": "assy_seat[10]", "select": true,
+            "children": [
+            {"title": "chair_flex_connector [402]", "select": true},
+            {"title": "chair_top_right_armrest [399]", "select": true},
+            {"title": "chair_top_left_armrest [396]", "select": true},
+            {"title": "chair_back_pad [408] (2)", "select": true},
+            {"title": "chair_base_mount_left [405]", "select": true},
+            {"title": "chair_right_armrest_mount [400]", "select": true},
+            {"title": "chair_swivel_base [397]", "select": true},
+            {"title": "chair_back_holder [407]", "select": true},
+            {"title": "chair_seat_holder [398]", "select": true},
+            {"title": "chair_bottom_right_armrest [403]", "select": true},
+            {"title": "chair_bottom_left_armrest [404]", "select": true},
+            {"title": "chair_seat_pad [409]", "select": true},
+            {"title": "chair_left_armrest_mount [401]", "select": true},
+            {"title": "chair_seat_pad [409] (2)", "select": true},
+            {"title": "chair_base [406]", "select": true},
+            {"title": "chair_back_pad [408]", "select": true}
+            ]
+            },
+        {"title": "assy_seat [9]", "isFolder": true, "key": "assy_seat[9]", "select": true,
+            "children": [
+            {"title": "chair_base_mount_left [310]", "select": true},
+            {"title": "chair_back_pad [313] (2)", "select": true},
+            {"title": "chair_base [311]", "select": true},
+            {"title": "chair_seat_pad [314] (2)", "select": true},
+            {"title": "chair_seat_pad [314]", "select": true},
+            {"title": "chair_top_left_armrest [301]", "select": true},
+            {"title": "chair_back_holder [312]", "select": true},
+            {"title": "chair_right_armrest_mount [305]", "select": true},
+            {"title": "chair_seat_holder [303]", "select": true},
+            {"title": "chair_back_pad [313]", "select": true},
+            {"title": "chair_bottom_left_armrest [309]", "select": true},
+            {"title": "chair_bottom_right_armrest [308]", "select": true},
+            {"title": "chair_flex_connector [307]", "select": true},
+            {"title": "chair_top_right_armrest [304]", "select": true},
+            {"title": "chair_swivel_base [302]", "select": true},
+            {"title": "chair_left_armrest_mount [306]", "select": true}
+            ]
+            },
+        {"title": "PLUG_32 [14] (3)", "select": true},
+        {"title": "assy_seat_engine_cover [6]", "isFolder": true, "key": "assy_seat_engine_cover[6]", "select": true,
+            "children": [
+            {"title": "back_seat_center [53] (2)", "select": true},
+            {"title": "back_seat_engine_cover [54]", "select": true},
+            {"title": "back_seat_center [53]", "select": true}
+            ]
+            },
+        {"title": "PLUG_32 [14] (2)", "select": true},
+        {"title": "assy_seat_back_right [4]", "isFolder": true, "key": "assy_seat_back_right[4]", "select": true,
+            "children": [
+            {"title": "seat_back_board_right [24]", "select": true},
+            {"title": "seat_back_right [23] (2)", "select": true},
+            {"title": "seat_back_right [23]", "select": true}
+            ]
+            },
+        {"title": "head_wire_harness [3]", "isFolder": true, "key": "head_wire_harness[3]", "select": true,
+            "children": [
+            {"title": "tie_down_master [16]", "select": true}
+            ]
+            },
+        {"title": "PLUG_32 [14]", "select": true},
+        {"title": "assy_skylight [7]", "isFolder": true, "key": "assy_skylight[7]", "select": true,
+            "children": [
+            {"title": "skylight_rim [69]", "select": true},
+            {"title": "skylight_glass [68]", "select": true}
+            ]
+            },
+        {"title": "assy_seat_back_left [5]", "isFolder": true, "key": "assy_seat_back_left[5]", "select": true,
+            "children": [
+            {"title": "seat_back_left [38] (2)", "select": true},
+            {"title": "seat_back_left [38]", "select": true},
+            {"title": "seat_back_board_left [39]", "select": true}
+            ]
+            }
+        ]
+        }
+]
